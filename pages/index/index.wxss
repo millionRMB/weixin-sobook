@@ -18,7 +18,7 @@
   text-align: center
 }
 .nodata{
-  width: 96%;
+  width: 92%;
   margin: 50rpx auto;
 }
 .book{
