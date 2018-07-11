@@ -1,0 +1,41 @@
+/**index.wxss**/
+.top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.top .logo{
+  width: 350rpx;
+  height: 150rpx;
+  margin-bottom: 20rpx;
+}
+.top .search-input{
+  border: 4rpx solid gray;
+  width: 600rpx;
+  padding: 20rpx 40rpx;
+  text-align: center
+}
+.nodata{
+  width: 96%;
+  margin: 50rpx auto;
+}
+.book{
+  border-bottom: 1px solid gainsboro;
+  margin: 30rpx 34rpx 0;
+  padding-bottom: 30rpx;
+  overflow: hidden;
+}
+.left{
+  float: left;
+  width: 40%;
+}
+.left image{
+  width: 250rpx;
+  height: 370rpx;
+}
+.right{
+  padding-left: 10rpx;
+  line-height: 1.6;
+}

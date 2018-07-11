@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='top'>
+    <image class='logo' src="http://www.bai3.xyz:3000/images/logo2.png" />
+    <input class='search-input' type='text' confirm-type='search' placeholder='请输入书籍的名字或者作者' auto-focus/>
+    </view>
+    <scroll-view>
+      <block wx:if="{{books != []}}">
+        <view wx:for="{{books}}" class='book'>
+            <view class='left'>
+              <image src='{{item.image}}'></image>
+            </view>
+            <view class='right'>
+              <text>书名:{{item.name}}
+              作者:{{item.author}}
+              出版社:{{item.publisher}}
+              定价:{{item.price}}
+              ISBN:{{item.isbn}}
+              评分:{{item.rating}}</text>
+            </view>
+        </view>
+      </block> 
+      <block wx:else>
+        <cover-view>
+          <cover-image src="http://www.bai3.xyz:3000/images/404.gif" class='nodata'>
+          </cover-image>
+        </cover-view>
+      </block>  
+    </scroll-view>
+</view>
