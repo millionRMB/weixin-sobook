@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "小白搜书首页"
+  "navigationBarTitleText": "小白搜书首页",
+  "enablePullDownRefresh": true
 }

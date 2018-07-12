@@ -36,6 +36,8 @@
   height: 370rpx;
 }
 .right{
+  float: left;
   padding-left: 10rpx;
   line-height: 1.6;
+  width: 57%;
 }

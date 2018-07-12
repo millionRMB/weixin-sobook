@@ -6,7 +6,77 @@ Page({
   data: {
     books: [],
     keyword: '',
-    isbooks: 1
+    isbooks: 1,
+    start:0
+    
+  },
+  onReady: function(){
+   
+  },
+  onReachBottom: function (){
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    var this_ = this;
+    this_.setData({
+      start: ++this.data.start
+    })
+    wx.request({
+      url: 'https://douban.uieee.com/v2/book/search',
+      method: "GET",
+      data: {
+        q: this_.data.keyword,
+        start: this_.data.start
+      },
+      header: {
+        'content-type': 'application/xml' // 默认值
+      },
+      success: function (res) {
+        if (res.data.count > 0) {
+          this_.setData({
+            books: this_.data.books.concat(res.data.books),
+            isbooks: 2
+          })
+        }
+        wx.hideLoading();
+      },
+    })
+  },
+  onPullDownRefresh: function (){
+    var this_  = this;
+    wx.request({
+      url: 'https://douban.uieee.com/v2/book/search',
+      method: "GET",
+      data: {
+        q: this_.data.keyword
+      },
+      header: {
+        'content-type': 'application/xml' // 默认值
+      },
+      success: function (res) {
+        if (res.data.count > 0) {
+          this_.setData({
+            books: res.data.books,
+            isbooks: 2
+          })
+        } else {
+          this_.setData({
+            books: [],
+            isbooks: 3
+          })
+        }
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      },
+    })
+
+  },
+  setKeyword: function (e){
+    this.setData({
+      keyword: e.detail.value
+    })
   },
   getList: function(e){
     if(e.detail.value.length == 0){
@@ -20,27 +90,32 @@ Page({
     this.setData({
       keyword: e.detail.value
     });
+    wx.showLoading({
+      title: '玩命加载中',
+    })
     var this_ = this;
     wx.request({
-      url: 'http://www.bai3.xyz:3000/api/search',
+      url: 'https://douban.uieee.com/v2/book/search',
       method: "GET",
       data: {
-        kw: this.data.keyword
+        q: this.data.keyword
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/xml' // 默认值
       },
       success: function (res) {
-        if(res.data.code == 200){
+        if(res.data.count > 0){
           this_.setData({
-            books: res.data.data,
+            books: res.data.books,
             isbooks: 2
           })
-        }else if(res.data.code == 201){
+          wx.hideLoading();
+        }else{
           this_.setData({
             books: [],
             isbooks: 3
           })
+          wx.hideLoading();
         }
       },
     })

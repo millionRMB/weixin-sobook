@@ -2,7 +2,7 @@
 <view class="container">
     <view class='top'>
     <image class='logo' src="http://www.bai3.xyz:3000/images/logo2.png" />
-    <input class='search-input' type='text' confirm-type='search' placeholder='请输入书籍的名字或者作者' auto-focus  bindconfirm="getList"/>
+    <input class='search-input' type='text' confirm-type='search' placeholder='请输入书籍的名字或者作者' auto-focus bindinput="setKeyword"  bindconfirm="getList"/>
     </view>
     <scroll-view>
       <block wx:if="{{isbooks == 1}}">
@@ -12,13 +12,15 @@
             <view class='left'>
               <image src='{{item.image}}'></image>
             </view>
-            <view class='right'>
-              <text>书名:{{item.name}}
-              作者:{{item.author}}
-              出版社:{{item.publishe}}
-              定价:{{item.price}}
-              ISBN:{{item.isbn}}
-              评分:{{item.rating}}</text>
+            <view class='right'>              
+              <text>
+                <block wx:if="{{item.title}}">书名:{{item.title}}\n</block>
+                <block wx:if="{{item.author}}">作者:{{item.author}}\n</block>
+                <block wx:if="{{item.publisher.length}}">出版社:{{item.publisher}}\n</block>
+                <block wx:if="{{item.price}}">定价:{{item.price}}\n</block>
+                <block wx:if="{{item.isbn13}}">ISBN:{{item.isbn13}}\n</block>
+                <block wx:if="{{item.rating.average}}">评分:{{item.rating.average}}</block>
+              </text>
             </view>
         </view>
       </block> 
