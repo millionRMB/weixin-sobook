@@ -26,7 +26,7 @@ Page({
       method: "GET",
       data: {
         q: this_.data.keyword,
-        start: this_.data.start
+        start: this_.data.start*20
       },
       header: {
         'content-type': 'application/xml' // 默认值
@@ -37,8 +37,16 @@ Page({
             books: this_.data.books.concat(res.data.books),
             isbooks: 2
           })
+          wx.hideLoading();
+        }else{
+          wx.hideLoading();
+          wx.showToast({
+            title: '到底了',
+            icon: 'none',
+            duration: 2000
+          })
         }
-        wx.hideLoading();
+      
       },
     })
   },
@@ -75,7 +83,8 @@ Page({
   },
   setKeyword: function (e){
     this.setData({
-      keyword: e.detail.value
+      keyword: e.detail.value,
+      start: 0
     })
   },
   getList: function(e){
