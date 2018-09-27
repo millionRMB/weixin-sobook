@@ -1,11 +1,36 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index", 
+    "pages/top250/top250",
+    "pages/tag/tag",
+    "pages/subject/subject"
   ],
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#555",
+    "backgroundColor": "#f4f4f4",
+    "list": [ {
+      "pagePath": "pages/top250/top250",
+      "text": "排行榜",
+      "iconPath": "./images/best.png",
+      "selectedIconPath": "./images/best-s.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./images/index.png",
+      "selectedIconPath": "./images/index-s.png"
+
+    }, {
+      "pagePath": "pages/tag/tag",
+      "text": "分类",
+      "iconPath": "./images/tag.png",
+      "selectedIconPath": "./images/tag-s.png"
+    }]
   }
 }

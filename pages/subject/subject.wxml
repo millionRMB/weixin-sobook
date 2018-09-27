@@ -1,0 +1,5 @@
+<view >
+    书籍详情页
+    书籍id {{id}}
+    {{detail.summary}}
+</view>

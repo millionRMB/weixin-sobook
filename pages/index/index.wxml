@@ -1,14 +1,14 @@
 <!--index.wxml-->
 <view class="container">
     <view class='top'>
-    <image class='logo' src="http://www.bai3.xyz:3000/images/logo2.png" />
+    <image class='logo' src="/images/logo.png" />
     <input class='search-input' type='text' confirm-type='search' placeholder='请输入书籍的名字或者作者' auto-focus bindinput="setKeyword"  bindconfirm="getList"/>
     </view>
     <scroll-view>
       <block wx:if="{{isbooks == 1}}">
       </block>
       <block wx:elif="{{isbooks == 2}}">
-        <view wx:for="{{books}}" class='book' wx:key="id">
+        <view wx:for="{{books}}" class='book' data-id="{{item.id}}" wx:key="id" bindtap="toSubject">
             <view class='left'>
               <image src='{{item.image}}'></image>
             </view>
@@ -26,7 +26,7 @@
       </block> 
       <block wx:else>
       <cover-view>
-        <cover-image src="http://www.bai3.xyz:3000/images/404.gif" class='nodata'>
+        <cover-image src="/images/404.gif" class='nodata'>
         </cover-image>
       </cover-view>
     </block>   

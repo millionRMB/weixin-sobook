@@ -10,7 +10,7 @@ Page({
     start:0
     
   },
-  onReady: function(){
+  onReady: function (){
    
   },
   onReachBottom: function (){
@@ -87,7 +87,7 @@ Page({
       start: 0
     })
   },
-  getList: function(e){
+  getList: function (e){
     if(e.detail.value.length == 0){
       wx.showToast({
         title: '关键字不能为空',
@@ -129,4 +129,9 @@ Page({
       },
     })
   },
+  toSubject: function (e) {
+    wx.navigateTo({
+      url: '../subject/subject?id='+e.currentTarget.dataset.id
+    })
+  }
 })
