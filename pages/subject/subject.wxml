@@ -1,5 +1,46 @@
-<view >
-    书籍详情页
-    书籍id {{id}}
-    {{detail.summary}}
+<view class="main">
+    <view class="book-detail">
+        <view class="title">{{detail.title}}</view>
+        <view class="content">
+            <view class="content-left">
+                <image src="{{detail.image}}" />
+            </view>
+            <view class="content-right">
+                <text>
+                    <block >作者:{{detail.author}}\n</block>
+                    <block >出版社:{{detail.publisher}}\n</block>
+                    <block >原作名:{{detail.origin_title}}\n</block>
+                    <block >译者:{{detail.translator}}\n</block>
+                    <block >出版年:{{detail.pubdate}}\n</block>
+                    <block >页数:{{detail.pages}}\n</block>
+                    <block >装帧:{{detail.binding}}\n</block>
+                    <block >丛书:{{detail.series.title}}\n</block>
+                    <block >定价:{{detail.price}}\n</block>
+                    <block >ISBN:{{detail.isbn13}}\n</block>
+                    <block >评分:{{detail.rating.average}}</block>
+                </text>
+            </view>
+        </view>
+    </view>
+    <view class="book-intro">
+        <view class="item-title">
+            内容简介...
+        </view>
+        <text class="item-text" decode="{{true}}" space="{{true}}"> 
+        {{detail.summary}}
+        </text>
+    </view>
+    <view class="author-intro">
+        <view class="item-title">
+            作者简介...
+        </view>
+        <text class="item-text" >
+            {{detail.author_intro}}
+        </text>
+    </view>
+    <view>
+        <block wx:for="{{detail.tags}}" wx:key="id">
+            {{item.title}}
+        </block>
+    </view>
 </view>

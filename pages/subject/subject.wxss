@@ -1,0 +1,44 @@
+.main {
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0 40rpx;
+}
+.main .book-detail .title {
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+.main .book-detail .content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.main .book-detail .content .content-left {
+  width: 45%;
+}
+.main .book-detail .content .content-left image {
+  width: 100%;
+  height: 400rpx;
+}
+.main .book-detail .content .content-right {
+  width: 48%;
+  font-size: 30rpx;
+}
+.main .item-title {
+  color: #007722;
+  font-size: 40rpx;
+  font-family: sans-serif;
+}
+.main .item-text {
+  font-size: 30rpx;
+  line-height: 2;
+  text-indent: 30rpx;
+  text-align: left;
+  display: block;
+}
+.main .book-intro {
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}
+.main .author-intro {
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}

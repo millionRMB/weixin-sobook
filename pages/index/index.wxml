@@ -2,9 +2,9 @@
 <view class="container">
     <view class='top'>
     <image class='logo' src="/images/logo.png" />
-    <input class='search-input' type='text' confirm-type='search' placeholder='请输入书籍的名字或者作者' auto-focus bindinput="setKeyword"  bindconfirm="getList"/>
+    <input class='search-input'  type='text' confirm-type='search' placeholder='请输入书籍的名字或者作者' auto-focus bindinput="setKeyword"  bindconfirm="getList"/>
     </view>
-    <scroll-view>
+    <scroll-view scroll-y="true" class="main" bindscrolltolower="lower" >
       <block wx:if="{{isbooks == 1}}">
       </block>
       <block wx:elif="{{isbooks == 2}}">
@@ -25,10 +25,7 @@
         </view>
       </block> 
       <block wx:else>
-      <cover-view>
-        <cover-image src="/images/404.gif" class='nodata'>
-        </cover-image>
-      </cover-view>
-    </block>   
+        <image src="/images/nomatch.svg" class='nodata' />
+      </block>   
     </scroll-view>
 </view>

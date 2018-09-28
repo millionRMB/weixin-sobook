@@ -7,4 +7,10 @@
   justify-content: space-between;
   padding: 50rpx 0;
   box-sizing: border-box;
+  font-family: "Microsoft YaHei"
 } 
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

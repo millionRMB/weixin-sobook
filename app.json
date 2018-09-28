@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/subject/subject",
     "pages/index/index", 
     "pages/top250/top250",
-    "pages/tag/tag",
-    "pages/subject/subject"
+    "pages/tags/tags",
+    "pages/tag/tag"
   ],
   "window":{
     "backgroundTextStyle":"dark",
@@ -27,7 +28,7 @@
       "selectedIconPath": "./images/index-s.png"
 
     }, {
-      "pagePath": "pages/tag/tag",
+      "pagePath": "pages/tags/tags",
       "text": "分类",
       "iconPath": "./images/tag.png",
       "selectedIconPath": "./images/tag-s.png"
