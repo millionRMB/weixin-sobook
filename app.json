@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/subject/subject",
     "pages/index/index", 
+    "pages/subject/subject",
     "pages/top250/top250",
     "pages/tags/tags",
     "pages/tag/tag"

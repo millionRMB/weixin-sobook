@@ -7,40 +7,53 @@
             </view>
             <view class="content-right">
                 <text>
-                    <block >作者:{{detail.author}}\n</block>
-                    <block >出版社:{{detail.publisher}}\n</block>
-                    <block >原作名:{{detail.origin_title}}\n</block>
-                    <block >译者:{{detail.translator}}\n</block>
-                    <block >出版年:{{detail.pubdate}}\n</block>
-                    <block >页数:{{detail.pages}}\n</block>
-                    <block >装帧:{{detail.binding}}\n</block>
-                    <block >丛书:{{detail.series.title}}\n</block>
-                    <block >定价:{{detail.price}}\n</block>
-                    <block >ISBN:{{detail.isbn13}}\n</block>
-                    <block >评分:{{detail.rating.average}}</block>
+                    <block wx:if="{{detail.author}}">作者:{{detail.author}}\n</block>
+                    <block wx:if="{{detail.publisher}}">出版社:{{detail.publisher}}\n</block>
+                    <block wx:if="{{detail.origin_title}}">原作名:{{detail.origin_title}}\n</block>
+                    <block wx:if="{{detail.translator}}">译者:{{detail.translator}}\n</block>
+                    <block wx:if="{{detail.pubdate}}">出版年:{{detail.pubdate}}\n</block>
+                    <block wx:if="{{detail.pages}}">页数:{{detail.pages}}\n</block>
+                    <block wx:if="{{detail.binding}}">装帧:{{detail.binding}}\n</block>
+                    <block wx:if="{{detail.series.title}}">丛书:{{detail.series.title}}\n</block>
+                    <block wx:if="{{detail.price}}">定价:{{detail.price}}\n</block>
+                    <block wx:if="{{detail.isbn13}}">ISBN:{{detail.isbn13}}\n</block>
+                    <block wx:if="{{detail.rating.average}}">评分:{{detail.rating.average}}</block>
                 </text>
             </view>
         </view>
     </view>
-    <view class="book-intro">
+    <view class="book-intro" >
         <view class="item-title">
             内容简介...
         </view>
-        <text class="item-text" decode="{{true}}" space="{{true}}"> 
-        {{detail.summary}}
-        </text>
+        <view class="item-text"> 
+            <block wx:if="{{detail.summary}}">
+                {{detail.summary}}
+            </block>
+            <block wx:else>
+                暂未设置
+            </block>
+        </view>
     </view>
     <view class="author-intro">
         <view class="item-title">
             作者简介...
         </view>
-        <text class="item-text" >
-            {{detail.author_intro}}
-        </text>
+        <view class="item-text" >
+            <block wx:if="{{detail.author_intro}}">
+                {{detail.author_intro}}
+            </block>
+            <block wx:else>
+                暂未设置
+            </block>
+        </view>
     </view>
     <view>
-        <block wx:for="{{detail.tags}}" wx:key="id">
-            {{item.title}}
-        </block>
+        <view class="item-title">
+            常用标签...
+        </view>
+        <view  class="tags flex-wrp">
+            <view wx:for="{{detail.tags}}" wx:key="id" class="tag flex-item">{{item.title}}</view>
+        </view>
     </view>
 </view>

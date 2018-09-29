@@ -190,5 +190,20 @@ Page({
     wx.navigateTo({
       url: '../subject/subject?id='+e.currentTarget.dataset.id
     })
+  },
+  /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+      return {
+
+          title: '小白搜书😄😄😄',
+
+          desc: '测试测试测试测试',
+
+          path: '/pages/index/index'
+
+      }
+
   }
 })

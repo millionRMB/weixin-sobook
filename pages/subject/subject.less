@@ -20,20 +20,23 @@
             .content-right {
                 width: 48%;
                 font-size: 30rpx;
+                text {
+                    line-height: 1.5;
+                }
             }
         }
     }
     .item-title {
         color: #007722;
         font-size: 40rpx;
-        font-family: sans-serif
+        font-family: sans-serif;
+        margin-bottom: 20rpx;
     }
     .item-text {
         font-size: 30rpx;
         line-height: 2;
-        text-indent: 30rpx;
         text-align: left;
-        display: block;
+        text-indent: 40rpx;
     }
     .book-intro {
         font-size: 35rpx;
@@ -42,5 +45,19 @@
     .author-intro {
         font-size: 35rpx;
         margin-bottom: 30rpx;
+    }
+    .tags {
+        flex-direction: row;
+        display: flex;
+        font-size: 20rpx;
+        justify-content: right;
+        flex-wrap: wrap;
+        .tag {
+            height: 30rpx;
+            padding: 8rpx;
+            border: 1rpx solid gray;
+            margin-right: 20rpx;
+            margin-bottom: 20rpx;
+        }
     }
 }

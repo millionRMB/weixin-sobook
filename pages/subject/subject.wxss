@@ -22,17 +22,20 @@
   width: 48%;
   font-size: 30rpx;
 }
+.main .book-detail .content .content-right text {
+  line-height: 1.5;
+}
 .main .item-title {
   color: #007722;
   font-size: 40rpx;
   font-family: sans-serif;
+  margin-bottom: 20rpx;
 }
 .main .item-text {
   font-size: 30rpx;
   line-height: 2;
-  text-indent: 30rpx;
   text-align: left;
-  display: block;
+  text-indent: 40rpx;
 }
 .main .book-intro {
   font-size: 35rpx;
@@ -41,4 +44,18 @@
 .main .author-intro {
   font-size: 35rpx;
   margin-bottom: 30rpx;
+}
+.main .tags {
+  flex-direction: row;
+  display: flex;
+  font-size: 20rpx;
+  justify-content: right;
+  flex-wrap: wrap;
+}
+.main .tags .tag {
+  height: 30rpx;
+  padding: 8rpx;
+  border: 1rpx solid gray;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
 }
